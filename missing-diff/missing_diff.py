@@ -131,9 +131,9 @@ while True:
 						print("fail with logblocks")
 						loggedBlocksTxtSize=""
 		except ValueError as e:
-			print("NGMI with sleep times: "+str(defaultSleepTime)+" seconds")
 			if countErr<1:
 				print(valiListAfter+" not found")
+				print("NGMI with sleep times: "+str(defaultSleepTime)+" seconds")
 			countErr=countErr+1
 
 	# What we print here, you can log it into a file/log.
