@@ -98,11 +98,11 @@ while True:
 				#we inited this counter at the beginning				
 				if counter>thresholdValidators:
 					#result=re.search('latest_block_height":"(.*)","latest_block_time',str(hello))
-					print("Block: "+str(actualBlock))
+					print("Block: "+str(actualBlock-1))
 					print("Found a diff! "+valiListAfter+":"+str(postProcessedMissedBefore)+">"+str(postProcessedMissedAfter))
 					print("CCF: "+str(counter))
 					#you might want to have ready the logged blocks dir.
-					os.system('junod query block '+str(actualBlock)+' >> ./loggedBlocks/loggedBlocks_'+str(actualBlock)+'.txt')
+					os.system('junod query block '+str(actualBlock-1)+' >> ./loggedBlocks/loggedBlocks_'+str(actualBlock-1)+'.txt')
 					#this time sleep here, it's why we can accelerate until 5 seconds wait between block at the end
 					#in theory, depending on how much microseconds takes for the rest of the code we would be catching up with juno with 5 s at the end plus this
 					#in theory, depending also on the rest of the code, we would be drifting down if we just decelerate to 6
@@ -111,7 +111,7 @@ while True:
 					try:
 						#now we saved the block in controversy, we'll capture the tx's :D
 						#I want to learn better what's behid this... at the moment just logging
-						with open('./loggedBlocks/loggedBlocks_'+str(actualBlock)+'.txt',"r") as blockInControversy:
+						with open('./loggedBlocks/loggedBlocks_'+str(actualBlock-1)+'.txt',"r") as blockInControversy:
 							contentBlockInControversy= blockInControversy.read().splitlines(True)
 						jsonInControversy=json.loads(str(contentBlockInControversy[0]))
 						print("Timestamp"+str(jsonInControversy['block']['header']['time']))
@@ -126,7 +126,7 @@ while True:
 						timestampThisBlock=""
 					try:
 						#get the size
-						loggedBlocksTxtSize=str(Path('./loggedBlocks/loggedBlocks_'+str(actualBlock)+'.txt').stat().st_size)
+						loggedBlocksTxtSize=str(Path('./loggedBlocks/loggedBlocks_'+str(actualBlock-1)+'.txt').stat().st_size)
 					except Exception as e:
 						print("fail with logblocks")
 						loggedBlocksTxtSize=""
