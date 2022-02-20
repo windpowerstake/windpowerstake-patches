@@ -14,7 +14,7 @@ from pathlib import Path
 
 #surely things can go wrong so use at your own risk
 #init threshold number of validators missing tx's
-thresholdValidators=3
+thresholdValidators=4
 
 waitABlock=True
 defaultSleepTime=8
