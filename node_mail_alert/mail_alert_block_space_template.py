@@ -67,7 +67,7 @@ all_chains = [chain_huahua, chain_cerberus, chain_juno, chain_evmos]
 # as xxxxxxx, use your pubkey
 huahua_base = 'chihuahuad query slashing signing-info \'{"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxxxxxxxxxxxxxxxxxxxx="}\' --node="'
 
-# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26656 with the defaults
+# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26657 with the defaults
 huahua_node_1 ="tcp://xxxxxxxxxxxxxxxxx"
 huahua_node_2 ="https://chihuahua-rpc.polkachu.com:443"
 huahua_node_3 ="https://rpc.chihuahua.wtf:443"
@@ -76,7 +76,7 @@ huahua_node_3 ="https://rpc.chihuahua.wtf:443"
 cerberus_base = 'cerberusd query slashing signing-info \'{"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxxxxxxxxxxxxxxxxxxxxx"}\'  --node="'
 
 
-# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26656 with the defaults
+# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26657 with the defaults
 cerberus_node_1 ="tcp://xxxxxxxxxxxxxxxxxxxxx"
 cerberus_node_2 ="https://cerberus-rpc.polkachu.com:443"
 cerberus_node_3 ="https://rpc-cerberus.ecostake.com:443"
@@ -86,7 +86,7 @@ cerberus_node_3 ="https://rpc-cerberus.ecostake.com:443"
 juno_base = 'junod query slashing signing-info \'{"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}\'  --node="'
 
 
-# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26656 with the defaults
+# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26657 with the defaults
 juno_node_1 ="tcp://xxxxxxxxxxxxxxxxxxxxx"
 juno_node_2 ="https://rpc-juno.ecostake.com:443"
 juno_node_3 ="https://rpc-juno.itastakers.com:443"
@@ -95,7 +95,7 @@ juno_node_3 ="https://rpc-juno.itastakers.com:443"
 evmos_base = 'evmosd query slashing signing-info \'{"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}\' --node="'
 
 
-# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26656 with the defaults
+# as xxxxxxx, use your own node, if you are running local (and on a node), you can do tcp://127.0.0.1:26657 with the defaults
 evmos_node_1 ="tcp://xxxxxxxxxxxxxxxxxxxxx"
 evmos_node_2 ="https://rpc.evmos.interbloc.org:443"
 evmos_node_3 ="https://rpc.evmos.bh.rocks:443"
