@@ -98,8 +98,8 @@ while True:
 		#Reduce the variable for the loop
 		Number_of_checks -=1
 	
-		#Wait 10 minutes to check the status of nodes again
-		time.sleep(60*10)
+		#Wait 30 seconds before doing round 2
+		time.sleep(30)
 	
 	print ("Status of validator in Nomic: " ,nomic_status)
 	
@@ -113,6 +113,5 @@ while True:
 		print("Validator not active in Nomic. Sending mail:")
 		#commands to send mail, sendgrid, or google particular application, etc..
 
-
-	time.sleep(600)
-
+	#wait 20 minutes between check and check
+	time.sleep(1200)
