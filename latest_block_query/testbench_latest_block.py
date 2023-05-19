@@ -15,7 +15,7 @@ blockchain="cerberusd"
 #the plan is to get it into production on other nodes later on
 
 #status of the blockchain, we'll use popen
-print("same status but with Popen")
+#print("same status but with Popen")
 a = datetime.datetime.now()
 command = blockchain + ' status 2>&1 | jq "{latest_block_height: .SyncInfo.latest_block_height}"'
 outputjson=""
@@ -29,19 +29,26 @@ latest_block_height = int(parsed_json['latest_block_height'])
 print(latest_block_height)
 b = datetime.datetime.now()
 c1 = b - a
-print("status query: "+str(c1))
-print("")
+print("clientd query: "+str(c1))
+#print("")
 
-print("now execute the log_search, which searches the last .log file in blockstore.db and then searches for the last block registered there...")
+#print("now execute the log_search, which searches the last .log file in blockstore.db and then searches for the last block registered there...")
 a = datetime.datetime.now()
-
-
 #this is the testbench for the log_search algorithm
-os.system("./log_search")
-
-
+os.system("./log_search_C.o")
 b = datetime.datetime.now()
 c2 = b - a
-print("status query: "+str(c2))
+print("cpp program: "+str(c2))
 
-print("improvement: "+str(c1/c2))
+a = datetime.datetime.now()
+#this is the testbench for the log_search algorithm
+command2="wget 127.0.0.1:26657/status --quiet"
+with Popen(command2, stdout=PIPE, stderr=None, shell=True) as process:
+        output2 = process.communicate()[0].decode("utf-8")
+        
+
+b = datetime.datetime.now()
+c3 = b - a
+print("status curl: "+str(c3))
+print("improvement C vs clientd: "+str(c1/c2))
+print("improvement C vs wget: "+str(c3/c2))
